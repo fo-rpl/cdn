@@ -1,0 +1,545 @@
+<html>
+ <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://unpkg.com/ace-css/css/ace.min.css">
+ <script src="sweetalert2.all.js"></script>
+
+	<style>
+		/*Addtional Style */
+		#sidenav {
+			max-height: 100vh;
+			height: 100vh;
+			max-width: 70vw;
+			min-width: 300px;
+			overflow-x: hidden;
+			overflow-y: auto;
+			transition: all .3s ease-in-out;
+			transform: translate(-150%, 0px);
+			-webkit-transform: translate(-150%, 0px);
+			/* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+			-ms-transform: translate(-150%, 0px);
+		}
+
+		#sidenav.active {
+			transition: all .3s ease-in-out;
+			transform: translate(0%, 0px);
+			-webkit-transform: translate(0%, 0px);
+			-ms-transform: translate(0%, 0px);
+			box-shadow: 0 4px 6px rgba(0, 0, 0, .4);
+		}
+
+		.burger {
+			height: 16px
+		}
+
+		.burger span {
+			display: block;
+			width: 20px;
+			height: 2px;
+			border-radius: 3px;
+		}
+
+		.pointer {
+			cursor: pointer;
+		}
+
+		.close {
+			width: 23px;
+			height: 23px;
+		}
+
+		.cross {
+			height: 23px;
+			width: 2px;
+			border-radius: 3px;
+		}
+
+		.cross.left {
+			transform: rotate(45deg);
+		}
+
+		.cross.right {
+			transform: rotate(-45deg);
+		}
+
+		.align-middle {
+			vertical-align: middle
+		}
+		.konten{
+		 min-height: 900px;
+		 background: rgba(0, 15, 127, 1.0);
+		}
+		.konten1{
+		 height: 0px;
+		 background:black;
+display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            
+		
+		}
+		.linker{
+		 text-decoration: none;
+		 font-size: 17px;
+		}
+		.donlod{
+		 min-height: 300px;
+		 background:rgba(173, 221, 230, 1) ;
+		 padding: 0px;
+		 width: 70%;
+		 margin: 0 auto;
+		 margin-top: 40px;
+		 margin-bottom: 40px;
+		 border: 2px solid white;
+		 border-radius: 20px;
+		 text-align: center;
+		
+		}
+		.donlod img{
+		 height: 300px;
+		 background:rgba(173, 221, 230, 1) ;
+		 width: 160px;
+		 margin: 0;
+		 margin-bottom: 0px;
+		}
+		
+		.description{
+		 font-weight: bold;
+		 position: relative;
+		}
+		.donld{
+		 width: 100%;
+		 display: inline-block;
+		 position: relative;
+		 height:30px;
+		 font-weight: bold;
+		 background: white;
+		 border: 2px solid aqua;
+		 border-radius:5px;margin-top: -8px;
+		 margin-bottom: 10px;
+		 text-decoration: none;
+		 color: black;
+		}
+		
+		.fil{
+		 min-height: 200px;
+		 background-color: black;
+		 border-top:1px solid lightblue;
+		}
+	</style>
+	
+<!--
+   <tr>
+    <td colspan="2" class="contndown">
+    <div class="isikntn">
+      <a class="judul1">jangan tinggalin aku</a>
+      <td>
+      <a class="opendownload" href="">open</a>
+      </div>
+      </td>
+      </td>
+   </tr>
+-->
+ </head>
+ <body>
+	<header id="hdr" class="bg-blue px2 py1 m0 flex items-center white" style="position:absolute;top:0;right:0;left:0">
+		<div class="burger pointer flex flex-column justify-between mr2">
+			<span class="bg-white"></span>
+			<span class="bg-white"></span>
+			<span class="bg-white"></span>
+		</div>
+		<a class="white caps text-decoration-none h3 bold" style="font-style:italic;border-bottom:1px solid aqua;border-radius:0px 0px 30px 0px;width:150px">Template</a>
+
+		<nav class="ml-auto">
+			<ul class="list-reset m0 h5 caps 2ul">
+				<a href="https://zhajsknkan.blogspot.com" class="inline-block btn p0">Blog</a>
+			</ul>
+		</nav>
+	</header>
+	
+	
+	<div id="sidenav" class="fixed z4 top-0 left-0 bg-black p2">
+		<div class="close flex items-center justify-center relative pointer mb2 right">
+			<div class="absolute cross bg-gray left"></div>
+			<div class="absolute cross bg-gray right"></div>
+		</div>
+
+<center>
+		<div class="bg-blue circle mb2 flex items-center justify-center white" style="width: 68px;height: 68px">
+			<svg aria-hidden="true" class="block" width="36" role="img" xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 22 20">
+				<g fill="currentColor">
+					<path d="M15,0.7L12.6,0c-0.1,0-0.2,0-0.2,0.1l-0.7,2.4c0,0.1,0,0.2,0.1,0.2l2.4,0.7c0.1,0,0.2,0,0.2-0.1l0.7-2.4
+                    C15.1,0.8,15.1,0.7,15,0.7z"></path>
+					<path d="M13.8,4.8l-2.4-0.7c-0.1,0-0.2,0-0.2,0.1L6.9,19.1c0,0.1,0,0.2,0.1,0.2L9.4,20c0.1,0,0.2,0,0.2-0.1L13.9,5
+                    C14,4.9,13.9,4.8,13.8,4.8z"></path>
+					<path d="M4.9,11.1l-0.8-0.8l-0.3-0.3l0.3-0.3l0.6-0.6l2.4-2.4c0.1-0.1,0.1-0.4,0-0.5L5.7,4.7c-0.1-0.1-0.4-0.1-0.5,0L0.1,9.8
+                    C0,10,0,10.2,0.1,10.4l5.1,5.1c0.1,0.1,0.4,0.1,0.5,0L7.2,14c0.1-0.1,0.1-0.4,0-0.5L4.9,11.1z"></path>
+					<path d="M17.1,9.1l0.8,0.8l0.3,0.3l-0.3,0.3L17.2,11l-2.4,2.4c-0.1,0.1-0.1,0.4,0,0.5l1.5,1.5c0.1,0.1,0.4,0.1,0.5,0l5.1-5.1
+                    c0.1-0.1,0.1-0.4,0-0.5l-5.1-5.1c-0.1-0.1-0.4-0.1-0.5,0l-1.5,1.5c-0.1,0.1-0.1,0.4,0,0.5L17.1,9.1z">
+					</path>
+				</g>
+			</svg>
+		</div>
+
+		<p class="m0 muted bold white"style="font-size:25px;margin-left:-10px">File Downloader</p>
+</center>
+
+		<hr>
+		<ul class="list-reset muted m0 2ul" style="color:skyblue">
+			<li class="h6 caps mb2">Support</li>
+
+			<li class="pointer mb2">
+				<svg class="inline-block align-middle mr2" width="22" height="22" viewBox="0 0 16 16"
+					fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd"
+						d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z" />
+				</svg>
+				<a class="linker" href="https://saweria.co/stsr" class="align-middle">Donation</a>
+			</li>
+
+		</ul>
+
+		<hr>
+
+		<ul class="list-reset muted m0 2ul" style="color:aqua;height:200px;overflow-y:scroll;overflow-x:hidden">
+			<li class="h6 caps mb2">File Download</li>
+			<li class="pointer mb2">
+				<svg class="inline-block align-middle mr2" width="22" height="22" viewBox="0 0 16 16"
+					fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M4 1h5v1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V6h1v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" />
+					<path d="M9 4.5V1l5 5h-3.5A1.5 1.5 0 0 1 9 4.5z" />
+					<path fill-rule="evenodd"
+						d="M5 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+
+				</svg>
+				<a onclick="belumada()" class="linker">script html bucin</a>
+			</li>
+			<li class="pointer mb2">
+				<svg class="inline-block align-middle mr2" width="22" height="22" viewBox="0 0 16 16"
+					fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M4 1h5v1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V6h1v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" />
+					<path d="M9 4.5V1l5 5h-3.5A1.5 1.5 0 0 1 9 4.5z" />
+					<path fill-rule="evenodd"
+						d="M5 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+
+				</svg>
+				<a href="" onclick="belumada()" class="linker">Template Html Artikel</a>
+			</li>
+			<li class="pointer mb2">
+				<svg class="inline-block align-middle mr2" width="22" height="22" viewBox="0 0 16 16"
+					fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M4 1h5v1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V6h1v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" />
+					<path d="M9 4.5V1l5 5h-3.5A1.5 1.5 0 0 1 9 4.5z" />
+					<path fill-rule="evenodd"
+						d="M5 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+
+				</svg>
+				<a href="" onclick="belumada()" class="linker">Template Html Busines</a>
+			</li>
+			<li class="pointer mb2">
+				<svg class="inline-block align-middle mr2" width="22" height="22" viewBox="0 0 16 16"
+					fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M4 1h5v1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V6h1v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" />
+					<path d="M9 4.5V1l5 5h-3.5A1.5 1.5 0 0 1 9 4.5z" />
+					<path fill-rule="evenodd"
+						d="M5 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+
+				</svg>
+				<a href="" onclick="belumada()" class="linker">Template Html Online Shop</a>
+			</li>
+			<li class="pointer mb2">
+				<svg class="inline-block align-middle mr2" width="22" height="22" viewBox="0 0 16 16"
+					fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M4 1h5v1H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V6h1v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" />
+					<path d="M9 4.5V1l5 5h-3.5A1.5 1.5 0 0 1 9 4.5z" />
+					<path fill-rule="evenodd"
+						d="M5 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+
+				</svg>
+				<a href="" onclick="belumada()" class="linker">musik downloader</a>
+			</li>
+			
+			</ul>
+
+		<hr>
+
+		<ul class="list-reset m0 white">
+			<li class="muted mb1 pointer">
+				<svg class="inline-block align-middle mr2" width="22" height="22" viewBox="0 0 16 16"
+					fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd"
+						d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z" />
+					<path fill-rule="evenodd"
+						d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z" />
+				</svg>
+				<span class="align-middle">Setting</span>
+			</li>
+		</ul>
+	</div>
+<div class="konten" id="isidata">
+ <br><br>
+ <div class="donlod">
+  <br>
+  <img id="gambardnl" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzuhL9pKWpT0Gy2sUAi8eYA1BHlWqV4a2hzgF92Teh-95sVw8KyD0y7nMTsUrm2OORg77DTT8hysWzL8Fo67GstdFxlfMWKYANaojLP5PrOCDuox6kruHPQ3HK7RdDTKq_y-mddFm9xpDdKyOoIBsdPY8yM7XXgcooz5HVvn92al7imgwhIQKaBoc/s1920/PesanBuatDoi.jpg/sa">
+  
+  <div class="description">
+   <font class="ds"></font>
+   <hr style="color:blue">
+   <a id="btndnld" onclick="window.open('https://walkingtutor.com/fszh1b08d?key=a7c369ddb6cada89002e1920230efdfa')" class="donld">Download
+   </a>
+   <br>
+   <a id="shrbtn" onclick="window.open('https://walkingtutor.com/fszh1b08d?key=a7c369ddb6cada89002e1920230efdfa')" class="donld">Share Link
+   </a>
+   <br>
+   <a id="btndm" onclick="window.open('https://walkingtutor.com/fszh1b08d?key=a7c369ddb6cada89002e1920230efdfa')" class="donld">Demo</a>
+  </div>
+ </div>
+ </div>
+ <!-- percobq -->
+<div id="pemisah" style="display:none">
+ <br><br>
+</div>
+ 
+ <div class="fil" style="background:darkgreen;margin-top:-250px">
+  
+  <center>
+ <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/254b183e38.js" crossorigin="anonymous"></script>
+ <style>
+.opendownload{
+ text-decoration: none;
+ font-family: Ubuntu;
+ background: yellow;
+ padding: 5px;
+ border-radius: 5px;
+ margin: 0 auto;
+ margin-left: 12px;
+}
+.gmbr{
+ width: 50px;height: 90px;
+ border-radius: 10px;
+ border-right: 10px solid silver;
+}
+ iss{
+  border-bottom: 1px solid white;
+ }
+ #input{
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 7px;
+  height:25px;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  width:85%;
+ }
+ .judul1{
+  margin-left: 20px;
+  position: relative;
+  top:8px;
+  color: black;
+  width: 80%;
+  font-family: Ubuntu;
+  font-weight: bold;
+ }
+ .contndown{
+  background: ;
+  min-height:10px;width:500px;
+  border-radius: 10px;
+ }
+ .isikntn{
+background:aqua;border-radius:10px;margin-bottom:19px;margin-top:10px;height:35px
+ }
+ </style>
+
+<input type='text' id='input' placeholder="search" onkeyup='searchTable()'>
+<li class="fa-solid fa-magnifying-glass" style="color:white;padding:10px;"></li>
+<br><br>
+    <div style="overflow-y:scroll;height:300px">
+<table id='table' style="color:white;background:;border-radius:10px">
+<thead>
+   <tr>
+      <th width="48px"></th>
+      <th width="150px"></th>
+      <th width="70px"></th>
+   </tr>
+   </thead>
+   <tbody id="de">
+   <tr>
+    <td colspan="2" class="contndown">
+    <div class="isikntn">
+      <a class="judul1">data permanen 1</a>
+      
+      <td>
+      <a class="opendownload" onclick="mlai()">open</a>
+      </div>
+      </td>
+   </tr>
+   </tbody>
+</table>
+
+</div>
+
+<script>
+function searchTable() {
+    var input;
+    var saring;
+    var status; 
+    var tbody; 
+    var tr; 
+    var td;
+    var i; 
+    var j;
+    input = document.getElementById("input");
+    saring = input.value.toUpperCase();
+    tbody = document.getElementsByTagName("tbody")[0];;
+    tr = tbody.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td");
+        for (j = 0; j < td.length; j++) {
+            if (td[j].innerHTML.toUpperCase().indexOf(saring) > -1) {
+                status = true;
+            }
+        }
+        if (status) {
+            tr[i].style="display:;background:";
+            status = false;
+        } else {
+            tr[i].style="display:none;";
+        }
+    }
+}
+</script>
+  </center>
+ </div>
+ 
+ 
+</div>
+
+	<footer class="px2 py3 bg-black aqua center">
+	 <hr>
+		<p class="muted">Copyright ©2022 → <a class="text-decoration-none blue"
+				href="https://id.storyku.repl.co/dashboard">id.storyku.repl.co</a>. All rights reserved. <a
+				class="text-decoration-none blue" href="https://id.storyku.repl.co/privacy/">Privacy</a></p>
+				<hr>
+	</footer>
+
+	<script>
+		let burger = document.querySelector('.burger');
+		let close = document.querySelector('.close');
+		let sidenav = document.querySelector('#sidenav');
+
+		// Burger click function
+		burger.addEventListener('click', function () {
+			sidenav.classList.add('active');
+		});
+		// Close click function
+		close.addEventListener('click', function () {
+			sidenav.classList.remove('active');
+		});
+		function belumada(){
+		 alert('data belum dibuat')
+		}
+	</script>
+	
+
+ <script type="text/javascript">
+ 
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+         var data=JSON.parse(xhttp.responseText);
+         data.forEach(function(element) {
+ 
+document.getElementById("de").innerHTML +='<tr><td colspan="2"class="contndown"><div class="isikntn"><a class="judul1">'+element.dataku.nama+'</a><td>'+element.dataku.url+'</div></td></td></tr>';
+function mu1(){alert(element.dataku.view)}
+    });
+      }
+  };
+  xhttp.open("GET", "https://file.only-me.repl.co/tmplt/database.json", true);
+  xhttp.send(data);
+let bayi = document.createElement("script");
+	bayi.innerHTML = "alert('cobtoh data')";
+ </script>
+ <!--
+ 
+<div class="konten1" id="isidata">
+ <div style="position:fixed;top:0;right:0;left:0;bottom:0;background:black">
+ </div>
+ <br><br>
+ <div class="donlod" style="position:fixed;top:10px;height:90%">
+  <br>
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzuhL9pKWpT0Gy2sUAi8eYA1BHlWqV4a2hzgF92Teh-95sVw8KyD0y7nMTsUrm2OORg77DTT8hysWzL8Fo67GstdFxlfMWKYANaojLP5PrOCDuox6kruHPQ3HK7RdDTKq_y-mddFm9xpDdKyOoIBsdPY8yM7XXgcooz5HVvn92al7imgwhIQKaBoc/s1920/PesanBuatDoi.jpg">
+  
+  <div class="description">
+   File html bucin
+   <hr style="color:blue">
+   <button class="donld">Download
+   </button>
+   <br>
+   <button class="donld">Share Link
+   </button>
+   <br>
+   <button class="donld">Demo</button>
+   <br>
+   <button class="donld" onclick="removedata()">Cancel</button>
+  </div>
+ </div>
+ 
+ -->
+ <script>
+  function removedata(){
+   document.getElementById('isidata').style='display:none';
+   
+   document.getElementById('pemisah').style='display:block';
+   
+  }
+ </script>
+ 
+
+<script>
+ function mlai(){
+document.getElementById("btndnld").href="xyz.php";
+  document.getElementById('gambardnl').src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzuhL9pKWpT0Gy2sUAi8eYA1BHlWqV4a2hzgF92Teh-95sVw8KyD0y7nMTsUrm2OORg77DTT8hysWzL8Fo67GstdFxlfMWKYANaojLP5PrOCDuox6kruHPQ3HK7RdDTKq_y-mddFm9xpDdKyOoIBsdPY8yM7XXgcooz5HVvn92al7imgwhIQKaBoc/s1920/PesanBuatDoi.jpg";
+Swal.fire({
+  icon: 'success',
+  title: 'yay! siap Download',
+toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 1500,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+}).
+  then(()=>{
+document.querySelector('#isidata').scrollIntoView({
+  behavior: 'smooth'
+})
+  })
+ }
+</script>
+
+
+ </body>
+</html>
